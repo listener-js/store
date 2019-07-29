@@ -12,36 +12,36 @@
 
 ### Properties
 
-* [listeners](_store_.store.md#static-listeners)
-* [state](_store_.store.md#static-state)
+* [listeners](_store_.store.md#listeners)
+* [state](_store_.store.md#state)
 
 ### Methods
 
-* [delete](_store_.store.md#static-delete)
-* [get](_store_.store.md#static-get)
-* [merge](_store_.store.md#static-merge)
-* [parentState](_store_.store.md#static-private-parentstate)
-* [set](_store_.store.md#static-set)
+* [delete](_store_.store.md#delete)
+* [get](_store_.store.md#get)
+* [merge](_store_.store.md#merge)
+* [parentState](_store_.store.md#private-parentstate)
+* [set](_store_.store.md#set)
 
 ## Properties
 
-### `Static` listeners
+###  listeners
 
-▪ **listeners**: *string[]* =  ["delete", "get", "merge", "set"]
+• **listeners**: *string[]* =  ["delete", "get", "merge", "set"]
 
 Defined in store.ts:2
 
 ___
 
-### `Static` state
+###  state
 
-▪ **state**: *object*
+• **state**: *object*
 
 Defined in store.ts:3
 
 ## Methods
 
-### `Static` delete
+###  delete
 
 ▸ **delete**(`eid`: string[], `id`: string[]): *void*
 
@@ -58,7 +58,7 @@ Name | Type |
 
 ___
 
-### `Static` get
+###  get
 
 ▸ **get**(`eid`: string[], `id`: string[]): *any*
 
@@ -75,7 +75,7 @@ Name | Type |
 
 ___
 
-### `Static` merge
+###  merge
 
 ▸ **merge**(`eid`: string[], `id`: string[], `value`: any): *void*
 
@@ -93,7 +93,7 @@ Name | Type |
 
 ___
 
-### `Static` `Private` parentState
+### `Private` parentState
 
 ▸ **parentState**(`id`: string[]): *[object | undefined, object]*
 
@@ -109,7 +109,7 @@ Name | Type |
 
 ___
 
-### `Static` set
+###  set
 
 ▸ **set**(`eid`: string[], `id`: string[], `value`: any): *void*
 

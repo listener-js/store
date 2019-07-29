@@ -1,69 +1,69 @@
 import { listener } from "@listener-js/listener"
-import { Store } from "../"
+import { store } from "../"
 
-listener({ Store })
+listener({ store })
 
-beforeEach((): void => { Store.state = {} })
+beforeEach((): void => { store.state = {} })
 
 test("defined", (): void => {
-  expect(Store).not.toBeUndefined()
+  expect(store).not.toBeUndefined()
 })
 
 test("get", (): void => {
-  Store.set([], ["hello"], true)
-  expect(Store.get([], ["hello"])).toBe(true)
+  store.set([], ["hello"], true)
+  expect(store.get([], ["hello"])).toBe(true)
 })
 
 test("get two ids", (): void => {
-  Store.set([], ["hello", "world"], true)
-  expect(Store.get([], ["hello", "world"])).toEqual(true)
+  store.set([], ["hello", "world"], true)
+  expect(store.get([], ["hello", "world"])).toEqual(true)
 })
 
 test("set", (): void => {
-  Store.set([], ["hello"], true)
-  expect(Store.get([], [])).toEqual({ hello: true })
+  store.set([], ["hello"], true)
+  expect(store.get([], [])).toEqual({ hello: true })
 })
 
 test("set overwrite", (): void => {
-  Store.set([], ["hello"], true)
-  Store.set([], ["hello"], false)
-  expect(Store.get([], [])).toEqual({ hello: false })
+  store.set([], ["hello"], true)
+  store.set([], ["hello"], false)
+  expect(store.get([], [])).toEqual({ hello: false })
 })
 
 test("set nested overwrite", (): void => {
-  Store.set([], ["hello"], true)
-  Store.set([], ["hello", "world"], true)
-  expect(Store.get([], [])).toEqual({ hello: true })
+  store.set([], ["hello"], true)
+  store.set([], ["hello", "world"], true)
+  expect(store.get([], [])).toEqual({ hello: true })
 })
 
 test("set two ids", (): void => {
-  Store.set([], ["hello", "world"], true)
-  expect(Store.get([], []))
+  store.set([], ["hello", "world"], true)
+  expect(store.get([], []))
     .toEqual({ hello: { world: true } })
 })
 
 test("merge", (): void => {
-  Store.set([], ["hello"], { world: true })
-  Store.merge([], ["hello"], { universe: true })
-  expect(Store.get([], [])).toEqual({
+  store.set([], ["hello"], { world: true })
+  store.merge([], ["hello"], { universe: true })
+  expect(store.get([], [])).toEqual({
     hello: { universe: true, world: true }
   })
 })
 
 test("delete", (): void => {
-  Store.set([], ["hello"], { world: true })
-  Store.delete([], ["hello"])
-  expect(Store.get([], [])).toEqual({})
+  store.set([], ["hello"], { world: true })
+  store.delete([], ["hello"])
+  expect(store.get([], [])).toEqual({})
 })
 
 test("immutable", (): void => {
-  const s1a = Store.get([], [])
-  Store.set([], ["hello"], { world: true })
-  const s1b = Store.get([], [])
-  const s2a = Store.get([], ["hello"])
-  Store.set([], ["hello", "universe"], true)
-  const s1c = Store.get([], [])
-  const s2b = Store.get([], ["hello"])
+  const s1a = store.get([], [])
+  store.set([], ["hello"], { world: true })
+  const s1b = store.get([], [])
+  const s2a = store.get([], ["hello"])
+  store.set([], ["hello", "universe"], true)
+  const s1c = store.get([], [])
+  const s2b = store.get([], ["hello"])
   expect(s1a).not.toBe(s1b)
   expect(s1b).not.toBe(s1c)
   expect(s2a).not.toBe(s2b)

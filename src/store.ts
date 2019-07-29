@@ -1,8 +1,8 @@
 export class Store {
-  public static listeners = ["delete", "get", "merge", "set"]
-  public static state: object = {}
+  public listeners = ["delete", "get", "merge", "set"]
+  public state: object = {}
 
-  public static delete(
+  public delete(
     eid: string[], id: string[]
   ): void {
     const [parent, state] = this.parentState(id)
@@ -12,7 +12,7 @@ export class Store {
     }
   }
 
-  public static get(
+  public get(
     eid: string[], id: string[]
   ): any {
     return id.reduce((memo, id): any => {
@@ -20,7 +20,7 @@ export class Store {
     }, this.state)
   }
 
-  public static merge(
+  public merge(
     eid: string[], id: string[], value: any
   ): void {
     const [parent, state] = this.parentState(id)
@@ -30,7 +30,7 @@ export class Store {
     }
   }
 
-  public static set(
+  public set(
     eid: string[], id: string[], value: any
   ): void {
     const [parent, state] = this.parentState(id)
@@ -40,7 +40,7 @@ export class Store {
     }
   }
 
-  private static parentState(
+  private parentState(
     id: string[]
   ): [object | undefined, object] {
     const state = { ...this.state }
@@ -62,3 +62,5 @@ export class Store {
     ]
   }
 }
+
+export const store = new Store()

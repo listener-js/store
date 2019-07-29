@@ -18,18 +18,18 @@ npm install @listener-js/listener @listener-js/store
 
 ```js
 import { listener } from "@listener-js/listener"
-import { Store } from "@listener-js/store"
+import { store } from "@listener-js/store"
 
-listener({ Store })
+listener({ store })
 ```
 
 ## Usage
 
 ```js
-Store.set([], ["hello", "world"], true)
-Store.get([], []) // { hello: { world: true } }
-Store.get([], ["hello"]) // { world: true }
-Store.get([], ["hello", "world"]) // true
-Store.merge([], ["hello"], { universe: true })
-Store.get([], []) // { hello: { universe: true, world: true } }
+store.set([], ["hello", "world"], true)
+store.get([], []) // { hello: { world: true } }
+store.get([], ["hello"]) // { world: true }
+store.get([], ["hello", "world"]) // true
+store.merge([], ["hello"], { universe: true })
+store.get([], []) // { hello: { universe: true, world: true } }
 ```
