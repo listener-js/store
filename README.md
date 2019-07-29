@@ -14,7 +14,7 @@ npm install @listener-js/listener @listener-js/store
 
 ```js
 import { listener } from "@listener-js/listener"
-import { Store } from "../"
+import { Store } from "@listener-js/store"
 
 listener({ Store })
 ```
