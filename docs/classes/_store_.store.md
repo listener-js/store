@@ -29,7 +29,7 @@
 
 • **listeners**: *string[]* =  ["delete", "get", "merge", "set"]
 
-Defined in store.ts:2
+*Defined in [store.ts:2](https://github.com/listener-js/store/blob/1a5e89f/src/store.ts#L2)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **state**: *object*
 
-Defined in store.ts:3
+*Defined in [store.ts:3](https://github.com/listener-js/store/blob/1a5e89f/src/store.ts#L3)*
 
 ## Methods
 
@@ -45,7 +45,7 @@ Defined in store.ts:3
 
 ▸ **delete**(`eid`: string[], `id`: string[]): *void*
 
-Defined in store.ts:5
+*Defined in [store.ts:5](https://github.com/listener-js/store/blob/1a5e89f/src/store.ts#L5)*
 
 **Parameters:**
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **get**(`eid`: string[], `id`: string[]): *any*
 
-Defined in store.ts:15
+*Defined in [store.ts:15](https://github.com/listener-js/store/blob/1a5e89f/src/store.ts#L15)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **merge**(`eid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:23
+*Defined in [store.ts:23](https://github.com/listener-js/store/blob/1a5e89f/src/store.ts#L23)*
 
 **Parameters:**
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **parentState**(`id`: string[]): *[object | undefined, object]*
 
-Defined in store.ts:43
+*Defined in [store.ts:43](https://github.com/listener-js/store/blob/1a5e89f/src/store.ts#L43)*
 
 **Parameters:**
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **set**(`eid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:33
+*Defined in [store.ts:33](https://github.com/listener-js/store/blob/1a5e89f/src/store.ts#L33)*
 
 **Parameters:**
 

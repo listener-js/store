@@ -20,4 +20,4 @@
 
 • **store**: *[Store](../classes/_store_.store.md)* =  new Store()
 
-Defined in store.ts:66
+*Defined in [store.ts:66](https://github.com/listener-js/store/blob/1a5e89f/src/store.ts#L66)*
