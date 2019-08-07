@@ -1,8 +1,8 @@
 import { listener } from "@listener-js/listener"
-import { Log } from "@listener-js/log"
+import { log } from "@listener-js/log"
 import { store } from "../"
 
-listener({ Log, store }, { logAll: true })
+listener({ log, store }, { logAll: true })
 
 beforeEach((): void => { store.state = {} })
 
