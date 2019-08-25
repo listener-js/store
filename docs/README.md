@@ -2,7 +2,7 @@
 
 [Globals](globals.md) /
 
-# store
+# @listener-js/store
 
 Listener store
 

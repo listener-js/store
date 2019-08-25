@@ -1,4 +1,4 @@
-# store
+# @listener-js/store
 
 Listener store
 
