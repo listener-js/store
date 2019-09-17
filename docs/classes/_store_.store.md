@@ -1,6 +1,4 @@
-> **[@listener-js/store](../README.md)**
-
-[Globals](../globals.md) / ["store"](../modules/_store_.md) / [Store](_store_.store.md) /
+[@listener-js/store](../README.md) › [Globals](../globals.md) › ["store"](../modules/_store_.md) › [Store](_store_.store.md)
 
 # Class: Store
 
@@ -62,7 +60,7 @@ ___
 
 ▸ **get**(`eid`: string[], `id`: string[]): *any*
 
-Defined in store.ts:15
+Defined in store.ts:13
 
 **Parameters:**
 
@@ -79,7 +77,7 @@ ___
 
 ▸ **merge**(`eid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:23
+Defined in store.ts:19
 
 **Parameters:**
 
@@ -113,7 +111,7 @@ ___
 
 ▸ **set**(`eid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:33
+Defined in store.ts:31
 
 **Parameters:**
 

@@ -4,7 +4,9 @@ import { store } from "../"
 
 listener({ log, store })
 
-beforeEach((): void => { store.state = {} })
+beforeEach((): void => {
+  store.state = {}
+})
 
 test("defined", (): void => {
   expect(store).not.toBeUndefined()
@@ -39,15 +41,16 @@ test("set nested overwrite", (): void => {
 
 test("set two ids", (): void => {
   store.set([], ["hello", "world"], true)
-  expect(store.get([], []))
-    .toEqual({ hello: { world: true } })
+  expect(store.get([], [])).toEqual({
+    hello: { world: true },
+  })
 })
 
 test("merge", (): void => {
   store.set([], ["hello"], { world: true })
   store.merge([], ["hello"], { universe: true })
   expect(store.get([], [])).toEqual({
-    hello: { universe: true, world: true }
+    hello: { universe: true, world: true },
   })
 })
 

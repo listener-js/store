@@ -1,6 +1,4 @@
-> **[@listener-js/store](../README.md)**
-
-[Globals](../globals.md) / ["store"](_store_.md) /
+[@listener-js/store](../README.md) › [Globals](../globals.md) › ["store"](_store_.md)
 
 # External module: "store"
 
@@ -20,4 +18,4 @@
 
 • **store**: *[Store](../classes/_store_.store.md)* =  new Store()
 
-Defined in store.ts:66
+Defined in store.ts:61

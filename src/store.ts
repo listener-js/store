@@ -2,9 +2,7 @@ export class Store {
   public listeners = ["delete", "get", "merge", "set"]
   public state: object = {}
 
-  public delete(
-    eid: string[], id: string[]
-  ): void {
+  public delete(eid: string[], id: string[]): void {
     const [parent, state] = this.parentState(id)
     if (parent) {
       delete parent[id[id.length - 1]]
@@ -12,16 +10,16 @@ export class Store {
     }
   }
 
-  public get(
-    eid: string[], id: string[]
-  ): any {
+  public get(eid: string[], id: string[]): any {
     return id.reduce((memo, id): any => {
       return memo && memo[id]
     }, this.state)
   }
 
   public merge(
-    eid: string[], id: string[], value: any
+    eid: string[],
+    id: string[],
+    value: any
   ): void {
     const [parent, state] = this.parentState(id)
     if (parent) {
@@ -31,7 +29,9 @@ export class Store {
   }
 
   public set(
-    eid: string[], id: string[], value: any
+    eid: string[],
+    id: string[],
+    value: any
   ): void {
     const [parent, state] = this.parentState(id)
     if (parent) {
@@ -45,20 +45,15 @@ export class Store {
   ): [object | undefined, object] {
     const state = { ...this.state }
     return [
-      id.slice(0, -1).reduce(
-        (memo, id): object => {
-          if (memo && typeof memo === "object") {
-            const exists = memo[id] !== undefined
-            const obj = typeof memo[id] === "object"
-            memo[id] = obj ?
-              { ...memo[id] } :
-              (memo[id] || {})
-            return !exists || obj ? memo[id] : undefined
-          }
-        },
-        state
-      ),
-      state
+      id.slice(0, -1).reduce((memo, id): object => {
+        if (memo && typeof memo === "object") {
+          const exists = memo[id] !== undefined
+          const obj = typeof memo[id] === "object"
+          memo[id] = obj ? { ...memo[id] } : memo[id] || {}
+          return !exists || obj ? memo[id] : undefined
+        }
+      }, state),
+      state,
     ]
   }
 }
