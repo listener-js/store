@@ -2,7 +2,7 @@ import { listener } from "@listener-js/listener"
 import { log } from "@listener-js/log"
 import { store } from "../"
 
-listener({ log, store })
+listener([], { log, store })
 
 beforeEach((): void => {
   store.state = {}
