@@ -18,4 +18,4 @@
 
 • **store**: *[Store](../classes/_store_.store.md)* =  new Store()
 
-Defined in store.ts:61
+Defined in store.ts:60

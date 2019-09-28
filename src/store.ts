@@ -1,8 +1,7 @@
 export class Store {
-  public listeners = ["delete", "get", "merge", "set"]
   public state: object = {}
 
-  public delete(eid: string[], id: string[]): void {
+  public delete(lid: string[], id: string[]): void {
     const [parent, state] = this.parentState(id)
     if (parent) {
       delete parent[id[id.length - 1]]
@@ -10,14 +9,14 @@ export class Store {
     }
   }
 
-  public get(eid: string[], id: string[]): any {
+  public get(lid: string[], id: string[]): any {
     return id.reduce((memo, id): any => {
       return memo && memo[id]
     }, this.state)
   }
 
   public merge(
-    eid: string[],
+    lid: string[],
     id: string[],
     value: any
   ): void {
@@ -29,7 +28,7 @@ export class Store {
   }
 
   public set(
-    eid: string[],
+    lid: string[],
     id: string[],
     value: any
   ): void {

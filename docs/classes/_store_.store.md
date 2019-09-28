@@ -10,7 +10,6 @@
 
 ### Properties
 
-* [listeners](_store_.store.md#listeners)
 * [state](_store_.store.md#state)
 
 ### Methods
@@ -23,33 +22,25 @@
 
 ## Properties
 
-###  listeners
-
-• **listeners**: *string[]* =  ["delete", "get", "merge", "set"]
-
-Defined in store.ts:2
-
-___
-
 ###  state
 
 • **state**: *object*
 
-Defined in store.ts:3
+Defined in store.ts:2
 
 ## Methods
 
 ###  delete
 
-▸ **delete**(`eid`: string[], `id`: string[]): *void*
+▸ **delete**(`lid`: string[], `id`: string[]): *void*
 
-Defined in store.ts:5
+Defined in store.ts:4
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`eid` | string[] |
+`lid` | string[] |
 `id` | string[] |
 
 **Returns:** *void*
@@ -58,15 +49,15 @@ ___
 
 ###  get
 
-▸ **get**(`eid`: string[], `id`: string[]): *any*
+▸ **get**(`lid`: string[], `id`: string[]): *any*
 
-Defined in store.ts:13
+Defined in store.ts:12
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`eid` | string[] |
+`lid` | string[] |
 `id` | string[] |
 
 **Returns:** *any*
@@ -75,15 +66,15 @@ ___
 
 ###  merge
 
-▸ **merge**(`eid`: string[], `id`: string[], `value`: any): *void*
+▸ **merge**(`lid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:19
+Defined in store.ts:18
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`eid` | string[] |
+`lid` | string[] |
 `id` | string[] |
 `value` | any |
 
@@ -95,7 +86,7 @@ ___
 
 ▸ **parentState**(`id`: string[]): *[object | undefined, object]*
 
-Defined in store.ts:43
+Defined in store.ts:42
 
 **Parameters:**
 
@@ -109,15 +100,15 @@ ___
 
 ###  set
 
-▸ **set**(`eid`: string[], `id`: string[], `value`: any): *void*
+▸ **set**(`lid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:31
+Defined in store.ts:30
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`eid` | string[] |
+`lid` | string[] |
 `id` | string[] |
 `value` | any |
 
