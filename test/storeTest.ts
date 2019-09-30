@@ -1,6 +1,6 @@
 import { load } from "@listener-js/listener"
-import { log } from "@listener-js/log"
-import { store } from "../"
+import log from "@listener-js/log"
+import store from "../"
 
 load([], { log, store })
 

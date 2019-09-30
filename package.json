@@ -18,14 +18,15 @@
   "scripts": {
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ignore-path .gitignore --ext=js .",
+    "prepublish": "rm -rf dist; npm run build",
     "pretty": "prettier --write **/*.css **/*.json **/*.md",
     "test": "jest",
     "build": "tsc",
     "docs": "typedoc --out docs --media media --theme markdown src/*.ts"
   },
   "devDependencies": {
-    "@listener-js/listener": "2.8.1",
-    "@listener-js/log": "1.24.0",
+    "@listener-js/listener": "2.10.0",
+    "@listener-js/log": "1.26.0",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.8",
     "@typescript-eslint/eslint-plugin": "2.3.1",
