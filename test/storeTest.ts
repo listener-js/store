@@ -18,8 +18,8 @@ test("get", (): void => {
 })
 
 test("get two ids", (): void => {
-  store.set([], ["hello", "world"], true)
-  expect(store.get([], ["hello", "world"])).toEqual(true)
+  store.set([], ["world", "hello"], true)
+  expect(store.get([], ["world", "hello"])).toEqual(true)
 })
 
 test("set", (): void => {
@@ -35,12 +35,12 @@ test("set overwrite", (): void => {
 
 test("set nested overwrite", (): void => {
   store.set([], ["hello"], true)
-  store.set([], ["hello", "world"], true)
+  store.set([], ["world", "hello"], true)
   expect(store.get([], [])).toEqual({ hello: true })
 })
 
 test("set two ids", (): void => {
-  store.set([], ["hello", "world"], true)
+  store.set([], ["world", "hello"], true)
   expect(store.get([], [])).toEqual({
     hello: { world: true },
   })
@@ -65,7 +65,7 @@ test("immutable", (): void => {
   store.set([], ["hello"], { world: true })
   const s1b = store.get([], [])
   const s2a = store.get([], ["hello"])
-  store.set([], ["hello", "universe"], true)
+  store.set([], ["universe", "hello"], true)
   const s1c = store.get([], [])
   const s2b = store.get([], ["hello"])
   expect(s1a).not.toBe(s1b)

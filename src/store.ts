@@ -10,7 +10,7 @@ export class Store {
   }
 
   public get(lid: string[], id: string[]): any {
-    return id.reduce((memo, id): any => {
+    return id.reverse().reduce((memo, id): any => {
       return memo && memo[id]
     }, this.state)
   }
@@ -44,14 +44,19 @@ export class Store {
   ): [object | undefined, object] {
     const state = { ...this.state }
     return [
-      id.slice(0, -1).reduce((memo, id): object => {
-        if (memo && typeof memo === "object") {
-          const exists = memo[id] !== undefined
-          const obj = typeof memo[id] === "object"
-          memo[id] = obj ? { ...memo[id] } : memo[id] || {}
-          return !exists || obj ? memo[id] : undefined
-        }
-      }, state),
+      id
+        .reverse()
+        .slice(0, -1)
+        .reduce((memo, id): object => {
+          if (memo && typeof memo === "object") {
+            const exists = memo[id] !== undefined
+            const obj = typeof memo[id] === "object"
+            memo[id] = obj
+              ? { ...memo[id] }
+              : memo[id] || {}
+            return !exists || obj ? memo[id] : undefined
+          }
+        }, state),
       state,
     ]
   }
