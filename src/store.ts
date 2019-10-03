@@ -6,7 +6,7 @@ export class Store {
   public delete(lid: string[], id: string[]): void {
     const [parent, state] = this.parentState(id)
     if (parent) {
-      delete parent[id[id.length - 1]]
+      delete parent[id[0]]
       this.state = state
     }
   }

@@ -60,6 +60,12 @@ test("delete", (): void => {
   expect(store.get([], [])).toEqual({})
 })
 
+test("delete two ids", (): void => {
+  store.set([], ["hello"], { world: true })
+  store.delete([], ["world", "hello"])
+  expect(store.get([], [])).toEqual({ hello: {} })
+})
+
 test("immutable", (): void => {
   const s1a = store.get([], [])
   store.set([], ["hello"], { world: true })
