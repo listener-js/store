@@ -12,7 +12,7 @@ export class Store {
   }
 
   public get(lid: string[], id: string[]): any {
-    return id.reverse().reduce((memo, id): any => {
+    return [...id].reverse().reduce((memo, id): any => {
       return memo && memo[id]
     }, this.state)
   }
@@ -24,7 +24,7 @@ export class Store {
   ): void {
     const [parent, state] = this.parentState(id)
     if (parent) {
-      Object.assign(parent[id[id.length - 1]], value)
+      Object.assign(parent[id[0]], value)
       this.state = state
     }
   }
@@ -36,7 +36,7 @@ export class Store {
   ): void {
     const [parent, state] = this.parentState(id)
     if (parent) {
-      parent[id[id.length - 1]] = value
+      parent[id[0]] = value
       this.state = state
     }
   }
@@ -59,8 +59,8 @@ export class Store {
     const state = { ...this.state }
     return [
       id
+        .slice(1)
         .reverse()
-        .slice(0, -1)
         .reduce((memo, id): object => {
           if (memo && typeof memo === "object") {
             const exists = memo[id] !== undefined
