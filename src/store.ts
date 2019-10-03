@@ -1,3 +1,5 @@
+import { ListenerBindings } from "@listener-js/listener"
+
 export class Store {
   public state: object = {}
 
@@ -39,6 +41,18 @@ export class Store {
     }
   }
 
+  private listenerBindings(
+    lid: string[],
+    instanceId: string
+  ): ListenerBindings {
+    return [
+      [
+        [`${instanceId}.set`, "**"],
+        `${instanceId}.storeEmit`,
+      ],
+    ]
+  }
+
   private parentState(
     id: string[]
   ): [object | undefined, object] {
@@ -59,6 +73,21 @@ export class Store {
         }, state),
       state,
     ]
+  }
+
+  private store(
+    lid: string[],
+    value: any
+  ): Promise<any> | void {
+    return
+  }
+
+  private storeEmit(
+    lid: string[],
+    id: string[],
+    value: any
+  ): Promise<any> | void {
+    return this.store(id, value)
   }
 }
 
