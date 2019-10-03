@@ -29,7 +29,7 @@
 
 • **state**: *object*
 
-Defined in store.ts:4
+Defined in store.ts:7
 
 ## Methods
 
@@ -37,7 +37,7 @@ Defined in store.ts:4
 
 ▸ **delete**(`lid`: string[], `id`: string[]): *void*
 
-Defined in store.ts:6
+Defined in store.ts:9
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ ___
 
 ▸ **get**(`lid`: string[], `id`: string[]): *any*
 
-Defined in store.ts:14
+Defined in store.ts:17
 
 **Parameters:**
 
@@ -69,16 +69,19 @@ ___
 
 ### `Private` listenerBindings
 
-▸ **listenerBindings**(`lid`: string[], `instanceId`: string): *ListenerBindings*
+▸ **listenerBindings**(`lid`: string[], `__namedParameters`: object): *ListenerBindings*
 
-Defined in store.ts:44
+Defined in store.ts:47
 
 **Parameters:**
 
+▪ **lid**: *string[]*
+
+▪ **__namedParameters**: *object*
+
 Name | Type |
 ------ | ------ |
-`lid` | string[] |
-`instanceId` | string |
+`instance` | any |
 
 **Returns:** *ListenerBindings*
 
@@ -88,7 +91,7 @@ ___
 
 ▸ **merge**(`lid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:20
+Defined in store.ts:23
 
 **Parameters:**
 
@@ -106,7 +109,7 @@ ___
 
 ▸ **parentState**(`id`: string[]): *[object | undefined, object]*
 
-Defined in store.ts:56
+Defined in store.ts:59
 
 **Parameters:**
 
@@ -122,7 +125,7 @@ ___
 
 ▸ **set**(`lid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:32
+Defined in store.ts:35
 
 **Parameters:**
 
@@ -140,7 +143,7 @@ ___
 
 ▸ **store**(`lid`: string[], `value`: any): *Promise‹any› | void*
 
-Defined in store.ts:78
+Defined in store.ts:81
 
 **Parameters:**
 
@@ -157,7 +160,7 @@ ___
 
 ▸ **storeEmit**(`lid`: string[], `id`: string[], `value`: any): *Promise‹any› | void*
 
-Defined in store.ts:85
+Defined in store.ts:88
 
 **Parameters:**
 
