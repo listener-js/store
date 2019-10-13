@@ -16,7 +16,7 @@
 
 * [delete](_store_.store.md#delete)
 * [get](_store_.store.md#get)
-* [listenerBindings](_store_.store.md#private-listenerbindings)
+* [listenerLoaded](_store_.store.md#private-listenerloaded)
 * [merge](_store_.store.md#merge)
 * [parentState](_store_.store.md#private-parentstate)
 * [set](_store_.store.md#set)
@@ -29,7 +29,7 @@
 
 • **state**: *object*
 
-Defined in store.ts:7
+Defined in store.ts:4
 
 ## Methods
 
@@ -37,7 +37,7 @@ Defined in store.ts:7
 
 ▸ **delete**(`lid`: string[], `id`: string[]): *void*
 
-Defined in store.ts:9
+Defined in store.ts:6
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ ___
 
 ▸ **get**(`lid`: string[], `id`: string[]): *any*
 
-Defined in store.ts:17
+Defined in store.ts:14
 
 **Parameters:**
 
@@ -67,11 +67,11 @@ Name | Type |
 
 ___
 
-### `Private` listenerBindings
+### `Private` listenerLoaded
 
-▸ **listenerBindings**(`lid`: string[], `__namedParameters`: object): *ListenerBindings*
+▸ **listenerLoaded**(`lid`: string[], `__namedParameters`: object): *void*
 
-Defined in store.ts:47
+Defined in store.ts:44
 
 **Parameters:**
 
@@ -82,8 +82,9 @@ Defined in store.ts:47
 Name | Type |
 ------ | ------ |
 `instance` | any |
+`listener` | Listener |
 
-**Returns:** *ListenerBindings*
+**Returns:** *void*
 
 ___
 
@@ -91,7 +92,7 @@ ___
 
 ▸ **merge**(`lid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:23
+Defined in store.ts:20
 
 **Parameters:**
 
@@ -109,7 +110,7 @@ ___
 
 ▸ **parentState**(`id`: string[]): *[object | undefined, object]*
 
-Defined in store.ts:59
+Defined in store.ts:55
 
 **Parameters:**
 
@@ -125,7 +126,7 @@ ___
 
 ▸ **set**(`lid`: string[], `id`: string[], `value`: any): *void*
 
-Defined in store.ts:35
+Defined in store.ts:32
 
 **Parameters:**
 
@@ -143,7 +144,7 @@ ___
 
 ▸ **store**(`lid`: string[], `value`: any): *Promise‹any› | void*
 
-Defined in store.ts:81
+Defined in store.ts:77
 
 **Parameters:**
 
@@ -160,7 +161,7 @@ ___
 
 ▸ **storeEmit**(`lid`: string[], `id`: string[], `value`: any): *Promise‹any› | void*
 
-Defined in store.ts:88
+Defined in store.ts:84
 
 **Parameters:**
 

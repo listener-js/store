@@ -1,7 +1,4 @@
-import {
-  ListenerBindings,
-  ListenerEvent,
-} from "@listener-js/listener"
+import { ListenerEvent } from "@listener-js/listener"
 
 export class Store {
   public state: object = {}
@@ -44,16 +41,15 @@ export class Store {
     }
   }
 
-  private listenerBindings(
+  private listenerLoaded(
     lid: string[],
-    { instance }: ListenerEvent
-  ): ListenerBindings {
-    return [
-      [
-        [`${instance.id}.set`, "**"],
-        `${instance.id}.storeEmit`,
-      ],
-    ]
+    { instance, listener }: ListenerEvent
+  ): void {
+    listener.bind(
+      lid,
+      [`${instance.id}.set`, "**"],
+      `${instance.id}.storeEmit`
+    )
   }
 
   private parentState(
