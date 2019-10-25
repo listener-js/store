@@ -29,6 +29,10 @@ export class Store {
     }
   }
 
+  public reset(): void {
+    this.state = {}
+  }
+
   public set(
     lid: string[],
     id: string[],
@@ -53,7 +57,7 @@ export class Store {
   }
 
   private listenerReset(lid: string[]): void {
-    this.state = {}
+    this.reset()
   }
 
   private parentState(
