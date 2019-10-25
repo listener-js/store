@@ -1,6 +1,7 @@
+import expect from "expect"
 import { load } from "@listener-js/listener"
 import log from "@listener-js/log"
-import store from "../"
+import store from "../src"
 
 load([], { log, store })
 
@@ -8,45 +9,45 @@ beforeEach((): void => {
   store.state = {}
 })
 
-test("defined", (): void => {
+it("defined", (): void => {
   expect(store).not.toBeUndefined()
 })
 
-test("get", (): void => {
+it("get", (): void => {
   store.set([], ["hello"], true)
   expect(store.get([], ["hello"])).toBe(true)
 })
 
-test("get two ids", (): void => {
+it("get two ids", (): void => {
   store.set([], ["world", "hello"], true)
   expect(store.get([], ["world", "hello"])).toEqual(true)
 })
 
-test("set", (): void => {
+it("set", (): void => {
   store.set([], ["hello"], true)
   expect(store.get([], [])).toEqual({ hello: true })
 })
 
-test("set overwrite", (): void => {
+it("set overwrite", (): void => {
   store.set([], ["hello"], true)
   store.set([], ["hello"], false)
   expect(store.get([], [])).toEqual({ hello: false })
 })
 
-test("set nested overwrite", (): void => {
+it("set nested overwrite", (): void => {
   store.set([], ["hello"], true)
   store.set([], ["world", "hello"], true)
   expect(store.get([], [])).toEqual({ hello: true })
 })
 
-test("set two ids", (): void => {
+it("set two ids", (): void => {
   store.set([], ["world", "hello"], true)
   expect(store.get([], [])).toEqual({
     hello: { world: true },
   })
 })
 
-test("merge", (): void => {
+it("merge", (): void => {
   store.set([], ["hello"], { world: true })
   store.merge([], ["hello"], { universe: true })
   expect(store.get([], [])).toEqual({
@@ -54,19 +55,19 @@ test("merge", (): void => {
   })
 })
 
-test("delete", (): void => {
+it("delete", (): void => {
   store.set([], ["hello"], { world: true })
   store.delete([], ["hello"])
   expect(store.get([], [])).toEqual({})
 })
 
-test("delete two ids", (): void => {
+it("delete two ids", (): void => {
   store.set([], ["hello"], { world: true })
   store.delete([], ["world", "hello"])
   expect(store.get([], [])).toEqual({ hello: {} })
 })
 
-test("immutable", (): void => {
+it("immutable", (): void => {
   const s1a = store.get([], [])
   store.set([], ["hello"], { world: true })
   const s1b = store.get([], [])
