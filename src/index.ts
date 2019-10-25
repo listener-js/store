@@ -52,6 +52,10 @@ export class Store {
     )
   }
 
+  private listenerReset(lid: string[]): void {
+    this.state = {}
+  }
+
   private parentState(
     id: string[]
   ): [object | undefined, object] {

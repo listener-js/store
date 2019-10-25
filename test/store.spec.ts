@@ -1,12 +1,11 @@
 import expect from "expect"
-import { load } from "@listener-js/listener"
+import { load, reset } from "@listener-js/listener"
 import log from "@listener-js/log"
 import store from "../src"
 
-load([], { log, store })
-
 beforeEach((): void => {
-  store.state = {}
+  reset(["beforeEach"])
+  load([], { log, store })
 })
 
 it("defined", (): void => {
