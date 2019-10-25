@@ -8,7 +8,7 @@
     "store"
   ],
   "author": "Listener <emit@listener.events>",
-  "main": "dist/store.js",
+  "main": "dist/cjs/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/listener-js/store.git"
